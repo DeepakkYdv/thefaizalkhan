@@ -9,6 +9,13 @@ const cameraFeeds = [
   "CAM 04 · REAR"
 ];
 
+const cameraFeedImages = [
+  "/images/1000186151.jpg",
+  "/images/1000186152.jpg",
+  "/images/1000186153.jpg",
+  "/images/1000186154.jpg"
+];
+
 const services = [
   {
     icon: "bi-camera-video",
@@ -326,9 +333,10 @@ function App() {
             <div className="col-12 col-md-6 order-1 order-md-2">
               <div className="hero-visual d-flex align-items-center justify-content-center">
                 <div className="cam-grid">
-                  {cameraFeeds.map((label) => (
+                  {cameraFeeds.map((label, index) => (
                     <div className="cam-feed" key={label}>
                       <div className="cam-feed-bg">
+                        <img className="cam-image" src={cameraFeedImages[index]} alt={label} />
                         <div className="cam-crosshair" />
                         <div className="cam-label">{label}</div>
                         <div className="cam-rec">
