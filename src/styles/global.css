@@ -639,12 +639,41 @@ nav {
 .contact-row span,
 .contact-row a,
 .cta-text p,
+.seo-copy p,
+.area-copy,
 .footer-about p,
 .footer-col ul li a,
 .footer-bottom p {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.6;
+}
+
+.seo-copy {
+  display: grid;
+  gap: 1rem;
+  max-width: 60ch;
+}
+
+.area-copy {
+  max-width: 62ch;
+}
+
+.area-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 212, 255, 0.22);
+  background: rgba(0, 212, 255, 0.08);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.faq-question {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
 }
 
 .bg2,

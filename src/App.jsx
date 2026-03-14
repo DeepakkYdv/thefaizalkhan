@@ -71,6 +71,58 @@ const whyChooseUs = [
   }
 ];
 
+const seoPoints = [
+  {
+    title: "Local CCTV Installation in Bihar",
+    description:
+      "We provide CCTV camera installation in Hajipur, Vaishali, and nearby Bihar areas for homes, offices, clinics, schools, shops, and warehouses."
+  },
+  {
+    title: "Free Site Survey Before Work Starts",
+    description:
+      "We assess entry gates, parking areas, cash counters, office cabins, and blind spots before recommending the right DVR, NVR, or IP camera setup."
+  },
+  {
+    title: "Repair, Upgrade, and Ongoing Support",
+    description:
+      "Clients contact us for CCTV maintenance, DVR issues, remote mobile viewing setup, old camera replacement, cable repair, and WiFi troubleshooting."
+  }
+];
+
+const serviceAreas = [
+  "Hajipur",
+  "Vaishali",
+  "Patna",
+  "Sonepur",
+  "Lalganj",
+  "Mahua",
+  "Jandaha",
+  "Bihar Sharif"
+];
+
+const faqs = [
+  {
+    question: "Do you provide CCTV installation in Hajipur and nearby Bihar areas?",
+    answer:
+      "Yes. Eye Spy Security provides CCTV installation in Hajipur, Vaishali, and nearby Bihar locations for homes, shops, offices, schools, and commercial properties."
+  },
+  {
+    question: "Can you repair old CCTV cameras and DVR systems?",
+    answer:
+      "Yes. We repair old CCTV cameras, DVR and NVR systems, damaged cables, storage problems, power issues, and remote mobile monitoring setup."
+  },
+  {
+    question: "Do you offer a free site visit before installation?",
+    answer:
+      "Yes. We offer a free site survey to understand camera placement, recording needs, and property coverage before recommending the best setup."
+  },
+  {
+    question: "Which camera brands do you install and service?",
+    answer:
+      "We work with Hikvision, Dahua, CP Plus, Honeywell, Axis, and other major CCTV camera brands depending on your site and budget."
+  }
+];
+
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -126,6 +178,12 @@ function App() {
               <a href="#why">About</a>
             </li>
             <li>
+              <a href="#areas">Areas</a>
+            </li>
+            <li>
+              <a href="#faq">FAQ</a>
+            </li>
+            <li>
               <a href="#contact">Contact</a>
             </li>
           </ul>
@@ -168,6 +226,24 @@ function App() {
           About
         </a>
         <a
+          href="#areas"
+          onClick={(event) => {
+            event.preventDefault();
+            goToSection("areas");
+          }}
+        >
+          Areas
+        </a>
+        <a
+          href="#faq"
+          onClick={(event) => {
+            event.preventDefault();
+            goToSection("faq");
+          }}
+        >
+          FAQ
+        </a>
+        <a
           href="#contact"
           onClick={(event) => {
             event.preventDefault();
@@ -191,15 +267,15 @@ function App() {
                   <span>Live Monitoring & Installation</span>
                 </div>
                 <h1 className="hero-title">
-                  EYE SPY
+                  CCTV Camera Installation
                   <br />
-                  <span className="accent">SECURITY</span>
+                  <span className="accent">In Hajipur, Vaishali, Bihar</span>
                 </h1>
-                <p className="hero-subtitle">CCTV · Networking · WiFi Solutions</p>
+                <p className="hero-subtitle">CCTV · Security Cameras · Networking · WiFi Solutions</p>
                 <p className="hero-desc">
-                  Professional security camera installation, DVR/NVR setup, networking
-                  solutions, and computer services. Serving Hajipur, Vaishali and
-                  surrounding areas.
+                  Eye Spy Security provides professional CCTV installation, DVR and NVR
+                  setup, security camera repair, networking solutions, and WiFi services
+                  in Hajipur, Vaishali, and nearby Bihar areas for homes and businesses.
                 </p>
                 <div className="hero-btns d-flex flex-wrap gap-3">
                   <button className="btn-primary" type="button" onClick={() => goToSection("contact")}>
@@ -282,6 +358,44 @@ function App() {
         </div>
       </section>
 
+      <section className="section seo-section">
+        <div className="container-fluid px-4 px-md-5">
+          <div className="row g-4 align-items-start">
+            <div className="col-12 col-lg-6">
+              <div className="section-label">Local SEO Content</div>
+              <div className="section-title">
+                Trusted CCTV Service In <span>Bihar</span>
+              </div>
+              <div className="seo-copy">
+                <p>
+                  If customers are searching for CCTV camera installation in Hajipur,
+                  CCTV service in Vaishali, DVR repair in Bihar, or WiFi camera setup
+                  near me, this page clearly targets those local service needs.
+                </p>
+                <p>
+                  We install security systems for houses, apartments, shops,
+                  jewellery stores, schools, coaching centres, clinics, offices,
+                  warehouses, and small factories with practical planning and support.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-12 col-lg-6">
+              <div className="row g-3">
+                {seoPoints.map((item) => (
+                  <div className="col-12" key={item.title}>
+                    <div className="service-card reveal h-100">
+                      <div className="service-title">{item.title}</div>
+                      <div className="service-desc">{item.description}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg2" id="why">
         <div className="container-fluid px-4 px-md-5">
           <div className="row align-items-center g-5">
@@ -333,7 +447,7 @@ function App() {
                     <div className="contact-icon">
                       <i className="bi bi-geo-alt-fill" />
                     </div>
-                    <span>Cinema Road, Yadav Chowk, Hajipur, Vaishali</span>
+                    <span>Cinema Road, Yadav Chowk, Hajipur, Vaishali, Bihar</span>
                   </div>
                   <div className="contact-row d-flex align-items-center gap-3 flex-wrap">
                     <div className="contact-icon">
@@ -344,6 +458,45 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section area-section" id="areas">
+        <div className="container-fluid px-4 px-md-5">
+          <div className="section-label">Areas We Serve</div>
+          <div className="section-title">
+            CCTV Installation Across <span>Hajipur, Vaishali and Bihar</span>
+          </div>
+          <p className="area-copy">
+            We regularly handle CCTV camera installation, maintenance, repairs, and
+            security upgrades for customers across these locations.
+          </p>
+          <div className="d-flex flex-wrap gap-3 mt-4">
+            {serviceAreas.map((area) => (
+              <span className="area-pill" key={area}>
+                {area}, Bihar
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section faq-section" id="faq">
+        <div className="container-fluid px-4 px-md-5">
+          <div className="section-label">Frequently Asked Questions</div>
+          <div className="section-title">
+            Common Questions About <span>CCTV Services</span>
+          </div>
+          <div className="row g-3">
+            {faqs.map((faq) => (
+              <div className="col-12 col-lg-6" key={faq.question}>
+                <article className="service-card faq-card reveal h-100">
+                  <h3 className="faq-question">{faq.question}</h3>
+                  <p className="service-desc mb-0">{faq.answer}</p>
+                </article>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -383,8 +536,8 @@ function App() {
               </a>
               <p>
                 Professional CCTV installation, networking, and computer services
-                in Hajipur, Vaishali. End-to-end security solutions for homes and
-                businesses.
+                in Hajipur, Vaishali, and nearby Bihar locations. End-to-end security
+                solutions for homes and businesses.
               </p>
             </div>
 
@@ -428,7 +581,7 @@ function App() {
           </div>
 
           <div className="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
-            <p>© 2026 Eye Spy Security · Cinema Road, Yadav Chowk, Hajipur, Vaishali</p>
+            <p>© 2026 Eye Spy Security · Cinema Road, Yadav Chowk, Hajipur, Vaishali, Bihar</p>
             <span className="footer-mono">SYS:ONLINE · ALL CAMERAS ACTIVE</span>
           </div>
         </div>

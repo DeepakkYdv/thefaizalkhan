@@ -1,0 +1,9 @@
+{
+  "name": "Eye Spy Security",
+  "short_name": "Eye Spy",
+  "description": "CCTV installation and security camera services in Hajipur, Vaishali, Bihar.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080c10",
+  "theme_color": "#080c10"
+}
