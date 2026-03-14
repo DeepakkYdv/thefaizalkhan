@@ -102,29 +102,50 @@ const serviceAreas = [
 
 const faqs = [
   {
-    question: "Do you provide CCTV installation in Hajipur and nearby Bihar areas?",
-    answer:
-      "Yes. Eye Spy Security provides CCTV installation in Hajipur, Vaishali, and nearby Bihar locations for homes, shops, offices, schools, and commercial properties."
+    question: {
+      en: "Do you provide CCTV installation in Hajipur and nearby Bihar areas?",
+      hi: "क्या आप हाजीपुर और आसपास के बिहार क्षेत्रों में CCTV installation करते हैं?"
+    },
+    answer: {
+      en: "Yes. Eye Spy Security provides CCTV installation in Hajipur, Vaishali, and nearby Bihar locations for homes, shops, offices, schools, and commercial properties.",
+      hi: "हाँ। Eye Spy Security हाजीपुर, वैशाली और आसपास के बिहार क्षेत्रों में घर, दुकान, ऑफिस, स्कूल और कमर्शियल प्रॉपर्टी के लिए CCTV installation सेवा देता है।"
+    }
   },
   {
-    question: "Can you repair old CCTV cameras and DVR systems?",
-    answer:
-      "Yes. We repair old CCTV cameras, DVR and NVR systems, damaged cables, storage problems, power issues, and remote mobile monitoring setup."
+    question: {
+      en: "Can you repair old CCTV cameras and DVR systems?",
+      hi: "क्या आप पुराने CCTV camera और DVR system की repair करते हैं?"
+    },
+    answer: {
+      en: "Yes. We repair old CCTV cameras, DVR and NVR systems, damaged cables, storage problems, power issues, and remote mobile monitoring setup.",
+      hi: "हाँ। हम पुराने CCTV camera, DVR और NVR system, खराब cable, storage issue, power problem और mobile remote monitoring setup की repair करते हैं।"
+    }
   },
   {
-    question: "Do you offer a free site visit before installation?",
-    answer:
-      "Yes. We offer a free site survey to understand camera placement, recording needs, and property coverage before recommending the best setup."
+    question: {
+      en: "Do you offer a free site visit before installation?",
+      hi: "क्या installation से पहले free site visit मिलता है?"
+    },
+    answer: {
+      en: "Yes. We offer a free site survey to understand camera placement, recording needs, and property coverage before recommending the best setup.",
+      hi: "हाँ। हम best setup बताने से पहले camera placement, recording requirement और property coverage समझने के लिए free site survey देते हैं।"
+    }
   },
   {
-    question: "Which camera brands do you install and service?",
-    answer:
-      "We work with Hikvision, Dahua, CP Plus, Honeywell, Axis, and other major CCTV camera brands depending on your site and budget."
+    question: {
+      en: "Which camera brands do you install and service?",
+      hi: "आप किन camera brand का installation और service करते हैं?"
+    },
+    answer: {
+      en: "We work with Hikvision, Dahua, CP Plus, Honeywell, Axis, and other major CCTV camera brands depending on your site and budget.",
+      hi: "हम आपकी site और budget के अनुसार Hikvision, Dahua, CP Plus, Honeywell, Axis और अन्य बड़े CCTV camera brand के साथ काम करते हैं।"
+    }
   }
 ];
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [faqLanguage, setFaqLanguage] = useState("en");
 
   useEffect(() => {
     const reveals = document.querySelectorAll(".reveal");
@@ -484,16 +505,36 @@ function App() {
 
       <section className="section faq-section" id="faq">
         <div className="container-fluid px-4 px-md-5">
-          <div className="section-label">Frequently Asked Questions</div>
-          <div className="section-title">
-            Common Questions About <span>CCTV Services</span>
+          <div className="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3 mb-4">
+            <div>
+              <div className="section-label">Frequently Asked Questions</div>
+              <div className="section-title mb-0">
+                Common Questions About <span>CCTV Services</span>
+              </div>
+            </div>
+            <div className="faq-toggle" role="group" aria-label="FAQ language toggle">
+              <button
+                type="button"
+                className={faqLanguage === "en" ? "faq-toggle-btn active" : "faq-toggle-btn"}
+                onClick={() => setFaqLanguage("en")}
+              >
+                English
+              </button>
+              <button
+                type="button"
+                className={faqLanguage === "hi" ? "faq-toggle-btn active" : "faq-toggle-btn"}
+                onClick={() => setFaqLanguage("hi")}
+              >
+                Hindi
+              </button>
+            </div>
           </div>
           <div className="row g-3">
             {faqs.map((faq) => (
-              <div className="col-12 col-lg-6" key={faq.question}>
+              <div className="col-12 col-lg-6" key={faq.question.en}>
                 <article className="service-card faq-card reveal h-100">
-                  <h3 className="faq-question">{faq.question}</h3>
-                  <p className="service-desc mb-0">{faq.answer}</p>
+                  <h3 className="faq-question">{faq.question[faqLanguage]}</h3>
+                  <p className="service-desc mb-0">{faq.answer[faqLanguage]}</p>
                 </article>
               </div>
             ))}
