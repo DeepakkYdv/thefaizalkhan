@@ -353,7 +353,7 @@ function App() {
         </div>
       </section>
 
-      <div className="brands-bar reveal">
+      <div className="brands-bar">
         <div className="container-fluid px-4 px-md-5">
           <div className="d-flex align-items-center justify-content-center flex-wrap gap-4 gap-md-5">
             {brands.map((brand) => (
